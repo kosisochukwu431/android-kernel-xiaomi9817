@@ -24,6 +24,11 @@ CONFIG_C3N_SMB358=y
 CONFIG_LEDS_AW2013=y
 CONFIG_LEDS_GPIO=y
 CONFIG_VIB_GPIO=y
+<<<<<<< HEAD
+=======
+CONFIG_QUICK_WAKEUP=y
+CONFIG_QUICK_CHARGE=y
+>>>>>>> 7e7dc3c13e4a... rolex: Enable quick charge
 # CONFIG_UTS_NS is not set
 # CONFIG_PID_NS is not set
 CONFIG_CIFS=y
