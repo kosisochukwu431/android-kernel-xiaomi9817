@@ -2485,17 +2485,31 @@ static void smb358_external_power_changed(struct power_supply *psy)
            {
 	      if (QC_Toggle == 1) 
 	      {
+<<<<<<< HEAD
 		 // If Current (mA) is Equal to 500 mA, then USB is Connected.
                  if ((prop.intval / 1000) == 500) 
 		 {
 		    // Raise USB-Charging Current (mA) to 1000 mA (Maximum Supported).
                     pr_info("Using Custom USB Current (mA) %d", 1000);
+=======
+		 // If Current (mA) is between 490mA and 900mA then USB charging 
+		 // For USB2.0  max current is 500mA and for USB 3.0 Max current is 900ma 
+                 if ((prop.intval / 1000) <= 900 && (prop.intval / 1000) > 490 ) 
+		 {
+		    // Raise USB-Charging Current (mA) to 1000 mA (Maximum Supported).
+                    pr_info("Using USB Current (mA) %d\n", 1000);
+>>>>>>> ce1572a21940... smb358: Better detection of USB charging and raise the current limits
                     current_limit = 1000;
                  }
                  else 
 	         {
+<<<<<<< HEAD
                      pr_info("Using Quick Charge Current (mA) %d", Dynamic_Current);
                      current_limit = Dynamic_Current;
+=======
+                     pr_info("Using AC Charge Current (mA) %d", 1600);
+                     current_limit = 16000;
+>>>>>>> ce1572a21940... smb358: Better detection of USB charging and raise the current limits
                  }
               }
               else
